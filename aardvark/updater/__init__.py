@@ -1,4 +1,5 @@
 #ensure absolute import for python3
+import sys
 from __future__ import absolute_import
 
 import copy
@@ -45,7 +46,7 @@ class AccountToUpdate(object):
 
         if not arns:
             self.current_app.logger.warn("Zero ARNs collected. Exiting")
-            exit(-1)
+            sys.exit(-1)
 
         client = self._get_client()
         try:
